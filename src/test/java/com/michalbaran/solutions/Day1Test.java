@@ -5,17 +5,18 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Day1Test {
+    static String example = "/src/test/resources/day1_example.txt";
+    static String input = "/src/main/resources/day1.txt";
 
     @Test
-    public void testPartOne(){
-        assertEquals(24000, Day1.Solution("/src/test/resources/day1a_example.txt"));
-        assertEquals(71023, Day1.Solution("/src/main/resources/day1a.txt"));
+    public void testPartOne() {
+        assertEquals(24000, new Day1(example).PartOne());
+        assertEquals(71023, new Day1(input).PartOne());
     }
 
     @Test
-    public void testPartTwo(){
-
+    public void testPartTwo() {
+        assertEquals(45000, new Day1(example).PartTwo());
+        assertEquals(206289, new Day1(input).PartTwo());
     }
-
-
 }
