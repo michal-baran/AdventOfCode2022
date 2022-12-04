@@ -1,19 +1,14 @@
 package com.michalbaran.solutions;
 
-import com.michalbaran.utils.StaticUtils;
-
-import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
 
-public class Day2 {
-    private static final Logger logger = Logger.getLogger(Day1.class.getName());
-    List<String> inputList;
+public class Day2 extends Day {
 
     public Day2(String filename) {
-        inputList = StaticUtils.inputFileToStringList(filename);
+        super(filename);
     }
 
+    @Override
     public int PartOne() {
         int result = inputList.stream()
                 .mapToInt(Day2::getResult)
@@ -22,6 +17,7 @@ public class Day2 {
         return result;
     }
 
+    @Override
     public int PartTwo() {
         int result = inputList.stream()
                 .mapToInt(Day2::changeResponse)

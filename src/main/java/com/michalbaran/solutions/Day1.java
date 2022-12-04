@@ -1,19 +1,16 @@
 package com.michalbaran.solutions;
 
 import com.michalbaran.utils.Elf;
-import com.michalbaran.utils.StaticUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Logger;
 
-public class Day1 {
-    private static Logger logger = Logger.getLogger(Day1.class.getName());
+public class Day1 extends Day {
     List<Elf> elves = new ArrayList<>();
 
     public Day1(String filename) {
-        List<String> inputList = StaticUtils.inputFileToStringList(filename);
+        super(filename);
         Elf tempElf = new Elf();
 
         for (String line : inputList) {
@@ -28,12 +25,14 @@ public class Day1 {
         Collections.sort(elves);
     }
 
+    @Override
     public int PartOne() {
         int max = elves.get(0).getCalories();
         logger.info("Max calories = " + max);
         return elves.get(0).getCalories();
     }
 
+    @Override
     public int PartTwo() {
         int sum = 0;
         for (int i = 0; i < 3; i++) {
