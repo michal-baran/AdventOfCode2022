@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class Day3Test {
-    String example = "/src/test/resources/day3_example.txt";
-    String input = "/src/main/resources/day3.txt";
+class Day4Test {
+    String example = "/src/test/resources/day4_example.txt";
+    String input = "/src/main/resources/day4.txt";
 
     @Test
     public void testPartOne() {
@@ -16,7 +16,7 @@ class Day3Test {
 
     @Test
     public void testPartTwo() {
-        assertEquals(70, new Day3(example).PartTwo());
-        assertEquals(2567, new Day3(input).PartTwo());
+        assertEquals(70, new Day4(example).PartTwo());
+        assertEquals(2567, new Day4(input).PartTwo());
     }
 }

@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Day2Test {
-    static String example = "/src/test/resources/day2_example.txt";
-    static String input = "/src/main/resources/day2.txt";
+    String example = "/src/test/resources/day2_example.txt";
+    String input = "/src/main/resources/day2.txt";
 
     @Test
     public void testPartOne() {
