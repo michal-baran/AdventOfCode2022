@@ -11,7 +11,7 @@ public class Day2 extends Day {
     @Override
     public int PartOne() {
         int result = inputList.stream()
-                .mapToInt(Day2::getResult)
+                .mapToInt(this::getResult)
                 .sum();
         logger.info("Strategy result: " + result);
         return result;
@@ -20,13 +20,13 @@ public class Day2 extends Day {
     @Override
     public int PartTwo() {
         int result = inputList.stream()
-                .mapToInt(Day2::changeResponse)
+                .mapToInt(this::changeResponse)
                 .sum();
         logger.info("Strategy result: " + result);
         return result;
     }
 
-    public static int getResult(String round) {
+    public int getResult(String round) {
         Map<String, Integer> scoreMap = Map.of(
                 "A X", 4,
                 "A Y", 8,
@@ -42,7 +42,7 @@ public class Day2 extends Day {
         return scoreMap.get(round);
     }
 
-    private static int changeResponse(String round) {
+    private int changeResponse(String round) {
         Map<String, Integer> scoreMap = Map.of(
                 "A X", 3,
                 "A Y", 4,

@@ -11,12 +11,12 @@ class Day3Test {
     @Test
     public void testPartOne() {
         assertEquals(157, new Day3(example).PartOne());
-        //assertEquals(71023, new Day3(input).PartOne());
+        assertEquals(71023, new Day3(input).PartOne());
     }
 
     @Test
     public void testPartTwo() {
-        //assertEquals(45000, new Day3(example).PartTwo());
-        //assertEquals(206289, new Day3(input).PartTwo());
+//        assertEquals(45000, new Day3(example).PartTwo());
+//        assertEquals(206289, new Day3(input).PartTwo());
     }
 }
