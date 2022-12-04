@@ -3,6 +3,7 @@ package com.michalbaran.solutions;
 import com.michalbaran.utils.StaticUtils;
 
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Logger;
 
 public class Day2 {
@@ -22,26 +23,43 @@ public class Day2 {
     }
 
     public int PartTwo() {
-        return 0;
+        int result = inputList.stream()
+                .mapToInt(Day2::changeResponse)
+                .sum();
+        logger.info("Strategy result: " + result);
+        return result;
     }
 
     public static int getResult(String round) {
-        int opponentsTurn = round.charAt(0) - 64;
-        int response = round.charAt(2) - 87;
-        int outcome = response;
-        int roundResult = response - opponentsTurn;
+        Map<String, Integer> scoreMap = Map.of(
+                "A X", 4,
+                "A Y", 8,
+                "A Z", 3,
 
-        switch (roundResult) {
-            case 0:
-                outcome += 3;
-                break;
-            case 1:
-            case -2:
-                outcome += 6;
-                break;
-            default:
-                break;
-        }
-        return outcome;
+                "B X", 1,
+                "B Y", 5,
+                "B Z", 9,
+
+                "C X", 7,
+                "C Y", 2,
+                "C Z", 6);
+        return scoreMap.get(round);
+    }
+
+    private static int changeResponse(String round) {
+        Map<String, Integer> scoreMap = Map.of(
+                "A X", 3,
+                "A Y", 4,
+                "A Z", 8,
+
+                "B X", 1,
+                "B Y", 5,
+                "B Z", 9,
+
+                "C X", 2,
+                "C Y", 6,
+                "C Z", 7);
+        return scoreMap.get(round);
+
     }
 }
