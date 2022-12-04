@@ -1,15 +1,9 @@
 package com.michalbaran.solutions;
 
-import com.sun.jdi.Value;
-
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class Day3 extends Day {
-    List<Value> commonLetters = new ArrayList<>();
-
     public Day3(String filename) {
         super(filename);
     }
@@ -25,7 +19,14 @@ public class Day3 extends Day {
 
     @Override
     public int PartTwo() {
-        return 0;
+        int result = 0;
+
+        for (int i = 0; i < inputList.size(); i += 3) {
+            result += findStickerValue(i);
+        }
+
+        logger.info("Part one result: " + result);
+        return result;
     }
 
     private int getItemValue(char c) {
@@ -50,5 +51,20 @@ public class Day3 extends Day {
         return commonItems.stream()
                 .mapToInt(this::getItemValue)
                 .sum();
+    }
+
+    private int findStickerValue(int index) {
+        for (char c1 : inputList.get(index).toCharArray()) {
+            for (char c2 : inputList.get(1 + index).toCharArray()) {
+                if (c1 == c2) {
+                    for (char c3 : inputList.get(2 + index).toCharArray()) {
+                        if (c1 == c3) {
+                            return this.getItemValue(c3);
+                        }
+                    }
+                }
+            }
+        }
+        return 0;
     }
 }
