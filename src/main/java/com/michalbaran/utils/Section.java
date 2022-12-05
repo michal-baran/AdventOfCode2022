@@ -3,25 +3,38 @@ package com.michalbaran.utils;
 import java.util.Arrays;
 
 public class Section {
-    int[] bounds;
+    private int min;
+    private int max;
 
     public Section(String line) {
-        bounds = Arrays.stream(line.split("-"))
+        int[] bounds = Arrays.stream(line.split("-"))
                 .mapToInt(Integer::parseInt)
                 .toArray();
+
+        min = bounds[0];
+        max = bounds[1];
     }
 
     public int getMin() {
-        return bounds[0];
+        return min;
     }
 
     public int getMax() {
-        return bounds[1];
+        return max;
     }
 
 
-    public boolean checkOverlap(Section o) {
-        return (this.getMin() >= o.getMin() && this.getMax() <= o.getMax()) ||
-                (this.getMin() <= o.getMin() && this.getMax() >= o.getMax());
+    public boolean checkFullOverlap(Section o) {
+        return (min >= o.getMin() && max <= o.getMax()) ||
+                (min <= o.getMin() && max >= o.getMax());
+    }
+
+    public int checkPartialOverlap(Section o) {
+        for (int i = min; i <= max; i++) {
+            for (int j = o.getMin(); j <= o.getMax(); j++) {
+                if (i == j) return 1;
+            }
+        }
+        return 0;
     }
 }

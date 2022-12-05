@@ -16,7 +16,7 @@ class Day4Test {
 
     @Test
     public void testPartTwo() {
-//        assertEquals(70, new Day4(example).PartTwo());
-//        assertEquals(2567, new Day4(input).PartTwo());
+        assertEquals(4, new Day4(example).PartTwo());
+        assertEquals(794, new Day4(input).PartTwo());
     }
 }

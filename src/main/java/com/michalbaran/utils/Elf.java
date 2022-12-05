@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Elf implements Comparable<Elf> {
-    List<Integer> caloriesList = new ArrayList<>();
+    private List<Integer> caloriesList = new ArrayList<>();
 
     public void addCalories(int calories) {
         caloriesList.add(calories);

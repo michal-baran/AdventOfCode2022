@@ -15,7 +15,7 @@ public class Day4 extends Day {
     @Override
     public int PartOne() {
         int result = inputList.stream()
-                .mapToInt(this::checkPair)
+                .mapToInt(this::checkPairOverlapping)
                 .sum();
         logger.info("Result = " + result);
         return result;
@@ -23,15 +23,28 @@ public class Day4 extends Day {
 
     @Override
     public int PartTwo() {
-        return 0;
+        int result = inputList.stream()
+                .mapToInt(this::getAllOverlappingSections)
+                .sum();
+        logger.info("Result = " + result);
+        return result;
     }
 
-    private int checkPair(String line) {
+    private int checkPairOverlapping(String line) {
         List<Section> sections = Arrays.stream(line.split(","))
                 .map(Section::new)
                 .collect(Collectors.toList());
 
-        return sections.get(0).checkOverlap(sections.get(1)) ? 1 : 0;
+        return sections.get(0).checkFullOverlap(sections.get(1)) ? 1 : 0;
+    }
+
+    private int getAllOverlappingSections(String line) {
+
+        List<Section> sections = Arrays.stream(line.split(","))
+                .map(Section::new)
+                .collect(Collectors.toList());
+
+        return sections.get(0).checkPartialOverlap(sections.get(1));
     }
 
 
