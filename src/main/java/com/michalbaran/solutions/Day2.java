@@ -9,8 +9,8 @@ public class Day2 extends Day {
     }
 
     @Override
-    public int PartOne() {
-        int result = inputList.stream()
+    public Integer PartOne() {
+        Integer result = inputList.stream()
                 .mapToInt(this::getResult)
                 .sum();
         logger.info("Strategy result: " + result);
@@ -18,7 +18,7 @@ public class Day2 extends Day {
     }
 
     @Override
-    public int PartTwo() {
+    public Integer PartTwo() {
         int result = inputList.stream()
                 .mapToInt(this::changeResponse)
                 .sum();

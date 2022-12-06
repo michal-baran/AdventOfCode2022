@@ -7,12 +7,12 @@ public class Day5 extends Day{
     }
 
     @Override
-    public int PartOne() {
-        return 0;
+    public String PartOne() {
+        return null;
     }
 
     @Override
-    public int PartTwo() {
-        return 0;
+    public String PartTwo() {
+        return null;
     }
 }

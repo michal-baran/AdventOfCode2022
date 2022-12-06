@@ -13,7 +13,7 @@ public abstract class Day {
         inputList = StaticUtils.inputFileToStringList(filename);
     }
 
-    public abstract int PartOne();
+    public abstract <T> T PartOne();
 
-    public abstract int PartTwo();
+    public abstract <T> T PartTwo();
 }

@@ -26,14 +26,14 @@ public class Day1 extends Day {
     }
 
     @Override
-    public int PartOne() {
-        int max = elves.get(0).getCalories();
+    public Integer PartOne() {
+            int max = elves.get(0).getCalories();
         logger.info("Max calories = " + max);
         return elves.get(0).getCalories();
     }
 
     @Override
-    public int PartTwo() {
+    public Integer PartTwo() {
         int sum = 0;
         for (int i = 0; i < 3; i++) {
             sum += elves.get(i).getCalories();

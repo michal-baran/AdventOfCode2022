@@ -13,7 +13,7 @@ public class Day4 extends Day {
     }
 
     @Override
-    public int PartOne() {
+    public Integer PartOne() {
         int result = inputList.stream()
                 .mapToInt(this::checkPairOverlapping)
                 .sum();
@@ -22,7 +22,7 @@ public class Day4 extends Day {
     }
 
     @Override
-    public int PartTwo() {
+    public Integer PartTwo() {
         int result = inputList.stream()
                 .mapToInt(this::getAllOverlappingSections)
                 .sum();
