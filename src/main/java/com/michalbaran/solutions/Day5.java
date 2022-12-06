@@ -13,14 +13,13 @@ public class Day5 extends Day {
 
     public Day5(String filename) {
         super(filename);
+        InitializeStacks();
+        inputList.forEach(this::processLines);
     }
 
     @Override
     public String PartOne() {
-        InitializeStacks();
-        inputList.forEach(this::processLines);
-        moves.forEach(this::performMove);
-
+        moves.forEach(this::performMove9000);
         String result = getResult();
         logger.info("Result of Part One: " + result);
         return result;
@@ -28,7 +27,10 @@ public class Day5 extends Day {
 
     @Override
     public String PartTwo() {
-        return null;
+        moves.forEach(this::performMove9001);
+        String result = getResult();
+        logger.info("Result of Part Two: " + result);
+        return result;
     }
 
     private void InitializeStacks() {
@@ -58,13 +60,25 @@ public class Day5 extends Day {
         }
     }
 
-    private void performMove(Move move) {
+    private void performMove9000(Move move) {
         ArrayDeque<Character> stackFrom = stacks.get(move.getFrom() - 1);
         ArrayDeque<Character> stackTo = stacks.get(move.getTo() - 1);
 
         for (int i = 0; i < move.getMoveAmount(); i++) {
             stackTo.add(Objects.requireNonNull(stackFrom.pollLast()));
         }
+    }
+
+    private void performMove9001(Move move) {
+        ArrayDeque<Character> stackFrom = stacks.get(move.getFrom() - 1);
+        ArrayDeque<Character> stackTo = stacks.get(move.getTo() - 1);
+        ArrayDeque<Character> tempDeq = new ArrayDeque<>();
+
+        for (int i = 0; i < move.getMoveAmount(); i++) {
+            tempDeq.push(Objects.requireNonNull(stackFrom.pollLast()));
+        }
+
+        stackTo.addAll(tempDeq);
     }
 
     private String getResult() {

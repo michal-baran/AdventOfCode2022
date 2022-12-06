@@ -10,26 +10,13 @@ class Day5Test {
 
     @Test
     public void testPartOne() {
-        String str1 = "CMZ";
-        String str2 = new Day5(example).PartOne();
-        assertEquals(str1, str2);
-
-        String str3 = "Input";
-        String str4 = new Day5(input).PartOne();
-        assertEquals(str3, str4);
+        assertEquals("CMZ", new Day5(example).PartOne());
+        assertEquals("PTWLTDSJV", new Day5(input).PartOne());
     }
 
     @Test
     public void testPartTwo() {
-//        assertEquals(4, new Day5(example).PartTwo());
-//        assertEquals(794, new Day5(input).PartTwo());
-    }
-
-    @Test
-    void partOne() {
-    }
-
-    @Test
-    void partTwo() {
+        assertEquals("MCD", new Day5(example).PartTwo());
+        assertEquals("WZMFVGGZP", new Day5(input).PartTwo());
     }
 }
