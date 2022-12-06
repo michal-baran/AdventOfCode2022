@@ -16,9 +16,8 @@ class Day6Test {
 
     @Test
     public void testPartTwo() {
-        /*
-        assertEquals("MCD", new Day6(example).PartTwo());
-        assertEquals("WZMFVGGZP", new Day6(input).PartTwo());
-        */
+        assertEquals(19, new Day6(example).PartTwo());
+        assertEquals(3256, new Day6(input).PartTwo());
+
     }
 }
