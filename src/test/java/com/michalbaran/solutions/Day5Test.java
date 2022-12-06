@@ -13,6 +13,10 @@ class Day5Test {
         String str1 = "CMZ";
         String str2 = new Day5(example).PartOne();
         assertEquals(str1, str2);
+
+        String str3 = "Input";
+        String str4 = new Day5(input).PartOne();
+        assertEquals(str3, str4);
     }
 
     @Test
