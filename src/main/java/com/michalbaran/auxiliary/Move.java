@@ -1,9 +1,9 @@
-package com.michalbaran.utils;
+package com.michalbaran.auxiliary;
 
 import java.util.Arrays;
 
 public class Move {
-    private int[] parameters;
+    private final int[] parameters;
 
     public Move(String line) {
         parameters = Arrays.stream(line

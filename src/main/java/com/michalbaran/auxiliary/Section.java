@@ -1,4 +1,4 @@
-package com.michalbaran.utils;
+package com.michalbaran.auxiliary;
 
 import java.util.Arrays;
 

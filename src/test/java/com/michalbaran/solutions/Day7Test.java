@@ -10,8 +10,8 @@ class Day7Test {
 
     @Test
     public void testPartOne() {
-        assertEquals(7, new Day7(example).PartOne());
-//        assertEquals(1855, new Day7(input).PartOne());
+        assertEquals(95437, new Day7(example).PartOne());
+        assertEquals(1770595, new Day7(input).PartOne());
     }
 
     @Test

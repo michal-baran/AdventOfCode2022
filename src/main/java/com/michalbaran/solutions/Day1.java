@@ -1,6 +1,6 @@
 package com.michalbaran.solutions;
 
-import com.michalbaran.utils.Elf;
+import com.michalbaran.auxiliary.Elf;
 
 import java.util.ArrayList;
 import java.util.Collections;

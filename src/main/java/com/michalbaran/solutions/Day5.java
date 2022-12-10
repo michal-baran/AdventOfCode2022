@@ -1,15 +1,12 @@
 package com.michalbaran.solutions;
 
-import com.michalbaran.utils.Move;
+import com.michalbaran.auxiliary.Move;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Day5 extends Day {
-    private List<ArrayDeque<Character>> stacks = new ArrayList<>();
-    private List<Move> moves = new ArrayList<>();
+    private final List<Deque<Character>> stacks = new ArrayList<>();
+    private final List<Move> moves = new ArrayList<>();
 
     public Day5(String filename) {
         super(filename);
@@ -61,8 +58,8 @@ public class Day5 extends Day {
     }
 
     private void performMove9000(Move move) {
-        ArrayDeque<Character> stackFrom = stacks.get(move.getFrom() - 1);
-        ArrayDeque<Character> stackTo = stacks.get(move.getTo() - 1);
+        Deque<Character> stackFrom = stacks.get(move.getFrom() - 1);
+        Deque<Character> stackTo = stacks.get(move.getTo() - 1);
 
         for (int i = 0; i < move.getMoveAmount(); i++) {
             stackTo.add(Objects.requireNonNull(stackFrom.pollLast()));
@@ -70,9 +67,9 @@ public class Day5 extends Day {
     }
 
     private void performMove9001(Move move) {
-        ArrayDeque<Character> stackFrom = stacks.get(move.getFrom() - 1);
-        ArrayDeque<Character> stackTo = stacks.get(move.getTo() - 1);
-        ArrayDeque<Character> tempDeq = new ArrayDeque<>();
+        Deque<Character> stackFrom = stacks.get(move.getFrom() - 1);
+        Deque<Character> stackTo = stacks.get(move.getTo() - 1);
+        Deque<Character> tempDeq = new ArrayDeque<>();
 
         for (int i = 0; i < move.getMoveAmount(); i++) {
             tempDeq.push(Objects.requireNonNull(stackFrom.pollLast()));

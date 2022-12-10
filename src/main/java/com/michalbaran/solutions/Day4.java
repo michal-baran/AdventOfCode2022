@@ -1,6 +1,6 @@
 package com.michalbaran.solutions;
 
-import com.michalbaran.utils.Section;
+import com.michalbaran.auxiliary.Section;
 
 import java.util.Arrays;
 import java.util.List;
