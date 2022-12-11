@@ -12,21 +12,30 @@ public class Day7 extends Day {
 
     public Day7(String filename) {
         super(filename);
+        inputList.forEach(this::ExecuteCommand);
     }
 
     @Override
     public Integer PartOne() {
-        inputList.forEach(this::ExecuteCommand);
-        return folders
+        int result = folders
                 .stream()
                 .mapToInt(DirectoryItem::getSize)
                 .filter(size -> size < 100000)
                 .sum();
+        logger.info("Result " + result);
+        return result;
     }
 
     @Override
     public Integer PartTwo() {
-        return 0;
+        int totalSize = changeDirectory("/").getSize();
+        int result = folders.stream()
+                .mapToInt(DirectoryItem::getSize)
+                .filter(size -> (totalSize - size) < 40000000)
+                .min()
+                .getAsInt();
+        logger.info("Result " + result);
+        return result;
     }
 
     private void ExecuteCommand(String line) {
