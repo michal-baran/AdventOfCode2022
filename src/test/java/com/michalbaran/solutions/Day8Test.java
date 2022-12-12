@@ -11,7 +11,7 @@ class Day8Test {
     @Test
     public void testPartOne() {
         assertEquals(21, new Day8(example).PartOne());
-//        assertEquals(1770595, new Day8(input).PartOne());
+        assertEquals(1835, new Day8(input).PartOne());
     }
 
     @Test
